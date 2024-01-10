@@ -1,0 +1,42 @@
+[
+  {
+    "model": "hiphopapi.user",
+    "pk": 1,
+    "fields": {
+      "uid": "user_1",
+      "name": "John Doe"
+    }
+  },
+  {
+    "model": "hiphopapi.user",
+    "pk": 2,
+    "fields": {
+      "uid": "user_2",
+      "name": "Alice Smith"
+    }
+  },
+  {
+    "model": "hiphopapi.user",
+    "pk": 3,
+    "fields": {
+      "uid": "user_3",
+      "name": "Bob Johnson"
+    }
+  },
+  {
+    "model": "hiphopapi.user",
+    "pk": 4,
+    "fields": {
+      "uid": "user_4",
+      "name": "Eva Williams"
+    }
+  },
+  {
+    "model": "hiphopapi.user",
+    "pk": 5,
+    "fields": {
+      "uid": "user_5",
+      "name": "David Brown"
+    }
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "model": "hiphopapi.order",
+    "pk": 1,
+    "fields": {
+      "name": "Order 1",
+      "cashier": 1,
+      "order_closed": false,
+      "order_type": "Type A",
+      "total_amount": "50.00"
+    }
+  },
+  {
+    "model": "hiphopapi.order",
+    "pk": 2,
+    "fields": {
+      "name": "Order 2",
+      "cashier": 2,
+      "order_closed": false,
+      "order_type": "Type B",
+      "total_amount": "75.50"
+    }
+  },
+  {
+    "model": "hiphopapi.order",
+    "pk": 3,
+    "fields": {
+      "name": "Order 3",
+      "cashier": 1,
+      "order_closed": true,
+      "order_type": "Type C",
+      "total_amount": "120.25"
+    }
+  },
+  {
+    "model": "hiphopapi.order",
+    "pk": 4,
+    "fields": {
+      "name": "Order 4",
+      "cashier": 3,
+      "order_closed": false,
+      "order_type": "Type D",
+      "total_amount": "90.00"
+    }
+  },
+  {
+    "model": "hiphopapi.order",
+    "pk": 5,
+    "fields": {
+      "name": "Order 5",
+      "cashier": 2,
+      "order_closed": true,
+      "order_type": "Type E",
+      "total_amount": "60.75"
+    }
+  }
+]

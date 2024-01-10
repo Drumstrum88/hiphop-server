@@ -1,0 +1,23 @@
+[
+  {
+    "model": "hiphopapi.ordertype",
+    "pk": 1,
+    "fields": {
+      "label": "In Person"
+    }
+  },
+  {
+    "model": "hiphopapi.ordertype",
+    "pk": 2,
+    "fields": {
+      "label": "Phone"
+    }
+  },
+  {
+    "model": "hiphopapi.ordertype",
+    "pk": 3,
+    "fields": {
+      "label": "Online"
+    }
+  }
+]

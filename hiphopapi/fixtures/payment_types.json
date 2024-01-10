@@ -1,0 +1,23 @@
+[
+  {
+    "model": "hiphopapi.paymenttype",
+    "pk": 1,
+    "fields": {
+      "label": "Cash"
+    }
+  },
+  {
+    "model": "hiphopapi.paymenttype",
+    "pk": 2,
+    "fields": {
+      "label": "Credit Card"
+    }
+  },
+  {
+    "model": "hiphopapi.paymenttype",
+    "pk": 3,
+    "fields": {
+      "label": "Apple Pay"
+    }
+  }
+]
