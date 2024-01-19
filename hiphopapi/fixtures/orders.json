@@ -3,55 +3,136 @@
     "model": "hiphopapi.order",
     "pk": 1,
     "fields": {
-      "name": "Order 1",
-      "cashier": 1,
-      "order_closed": false,
-      "order_type": "Type A",
-      "total_amount": "50.00"
+        "user": 1,
+        "name": "Order 1",
+        "status": "open",
+        "customer_phone": "1234567890",
+        "customer_email": "customer1@example.com",
+        "type": 1,
+        "tip": 2.00,
+        "total": 27.00,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 1
     }
-  },
-  {
+},
+{
     "model": "hiphopapi.order",
     "pk": 2,
     "fields": {
-      "name": "Order 2",
-      "cashier": 2,
-      "order_closed": false,
-      "order_type": "Type B",
-      "total_amount": "75.50"
+        "user": 1,
+        "name": "Order 2",
+        "status": "open",
+        "customer_phone": "9876543210",
+        "customer_email": "customer2@example.com",
+        "type": 1,
+        "tip": 3.00,
+        "total": 25.00,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 2
     }
-  },
-  {
+},
+{
     "model": "hiphopapi.order",
     "pk": 3,
     "fields": {
-      "name": "Order 3",
-      "cashier": 1,
-      "order_closed": true,
-      "order_type": "Type C",
-      "total_amount": "120.25"
+        "user": 1,
+        "name": "Order 3",
+        "status": "open",
+        "customer_phone": "5556667777",
+        "customer_email": "customer3@example.com",
+        "type": 1,
+        "tip": 1.50,
+        "total": 30.50,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 3
     }
-  },
-  {
+},
+{
     "model": "hiphopapi.order",
     "pk": 4,
     "fields": {
-      "name": "Order 4",
-      "cashier": 3,
-      "order_closed": false,
-      "order_type": "Type D",
-      "total_amount": "90.00"
+        "user": 1,
+        "name": "Order 4",
+        "status": "open",
+        "customer_phone": "3332221111",
+        "customer_email": "customer4@example.com",
+        "type": 1,
+        "tip": 5.00,
+        "total": 40.00,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 1
     }
-  },
-  {
+},
+{
     "model": "hiphopapi.order",
     "pk": 5,
     "fields": {
-      "name": "Order 5",
-      "cashier": 2,
-      "order_closed": true,
-      "order_type": "Type E",
-      "total_amount": "60.75"
+        "user": 1,
+        "name": "Order 5",
+        "status": "open",
+        "customer_phone": "9990008888",
+        "customer_email": "customer5@example.com",
+        "type": 1,
+        "tip": 2.50,
+        "total": 22.50,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 2
     }
-  }
+},
+{
+    "model": "hiphopapi.order",
+    "pk": 6,
+    "fields": {
+        "user": 1,
+        "name": "Order 6",
+        "status": "open",
+        "customer_phone": "7778889999",
+        "customer_email": "customer6@example.com",
+        "type": 1,
+        "tip": 4.00,
+        "total": 35.00,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 3
+    }
+},
+{
+    "model": "hiphopapi.order",
+    "pk": 7,
+    "fields": {
+        "user": 1,
+        "name": "Order 7",
+        "status": "open",
+        "customer_phone": "4445556666",
+        "customer_email": "customer7@example.com",
+        "type": 1,
+        "tip": 1.00,
+        "total": 20.00,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 1
+    }
+},
+{
+    "model": "hiphopapi.order",
+    "pk": 8,
+    "fields": {
+        "user": 1,
+        "name": "Order 8",
+        "status": "open",
+        "customer_phone": "2223334444",
+        "customer_email": "customer8@example.com",
+        "type": 1,
+        "tip": 3.50,
+        "total": 32.50,
+        "is_closed": false,
+        "date": "2024-01-19",
+        "payment": 2
+    }
+}
 ]

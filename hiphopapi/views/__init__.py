@@ -1,4 +1,4 @@
-from .auth import User, register_user, check_user
+from .auth import User, register_user, check_user 
 from .order_view import OrderView
 from .item_view import ItemView
 from .order_items_views import OrderItemView

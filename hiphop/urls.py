@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from hiphopapi.views import OrderView, ItemView
-from hiphopapi.views.auth import check_user
+from hiphopapi.views import  ItemView
+from hiphopapi.views.auth import check_user, register_user
 from hiphopapi.views.order_items_views import OrderItemView
 from hiphopapi.views.order_type_views import OrderTypeView
+from hiphopapi.views.order_view import OrderView
 from hiphopapi.views.payment_type_views import PaymentTypeView
 
 
@@ -37,7 +38,8 @@ router.register(r'paymenttypes', PaymentTypeView, 'paymenttype')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('', include(router.urls)),
-     path('register', register_error),
+    path('', include(router.urls)),
+    path('register', register_user),
     path('checkuser', check_user),
+
 ]

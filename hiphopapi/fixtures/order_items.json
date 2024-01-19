@@ -1,92 +1,75 @@
 [
   {
-    "model": "hiphopapi.orderitem",
-    "id": 1,
-    "fields": {
-      "order": 1,
-      "item": 1,
-      "quantity": 2
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 1,
+      "fields": {
+          "order": 1,
+          "item": 1,
+          "quantity": 2
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 2,
-    "fields": {
-      "order": 1,
-      "item": 2,
-      "quantity": 3
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 2,
+      "fields": {
+          "order": 2,
+          "item": 2,
+          "quantity": 1
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 3,
-    "fields": {
-      "order": 2,
-      "item": 3,
-      "quantity": 1
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 3,
+      "fields": {
+          "order": 3,
+          "item": 4,
+          "quantity": 2
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 4,
-    "fields": {
-      "order": 2,
-      "item": 4,
-      "quantity": 4
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 4,
+      "fields": {
+          "order": 4,
+          "item": 5,
+          "quantity": 1
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 5,
-    "fields": {
-      "order": 3,
-      "item": 5,
-      "quantity": 2
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 5,
+      "fields": {
+          "order": 5,
+          "item": 7,
+          "quantity": 2
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 6,
-    "fields": {
-      "order": 3,
-      "item": 6,
-      "quantity": 3
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 6,
+      "fields": {
+          "order": 6,
+          "item": 8,
+          "quantity": 1
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 7,
-    "fields": {
-      "order": 4,
-      "item": 7,
-      "quantity": 1
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 7,
+      "fields": {
+          "order": 7,
+          "item": 10,
+          "quantity": 2
+      }
   },
   {
-    "model": "hiphopapi.orderitem",
-    "id": 8,
-    "fields": {
-      "order": 4,
-      "item": 8,
-      "quantity": 4
-    }
-  },
-  {
-    "model": "hiphopapi.orderitem",
-    "pk": 9,
-    "fields": {
-      "order": 5,
-      "item": 9,
-      "quantity": 2
-    }
-  },
-  {
-    "model": "hiphopapi.orderitem",
-    "pk": 10,
-    "fields": {
-      "order": 5,
-      "item": 10,
-      "quantity": 3
-    }
+      "model": "hiphopapi.orderitem",
+      "id": 8,
+      "fields": {
+          "order": 8,
+          "item": 3,
+          "quantity": 1
+      }
   }
 ]
+

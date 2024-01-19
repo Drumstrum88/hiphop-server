@@ -1,44 +1,83 @@
 [
   {
-    "model": "hiphopapi.item",
-    "id": 1,
-    "name": "Item 1",
-    "price": "25.99"
+      "model": "hiphopapi.item",
+      "pk": 1,
+      "fields": {
+          "name": "Margherita Pizza",
+          "price": 12.99
+      }
   },
   {
-    "model": "hiphopapi.item",
-    "id": 2,
-    "name": "Item 2",
-    "price": "19.95"
+      "model": "hiphopapi.item",
+      "pk": 2,
+      "fields": {
+          "name": "Pepperoni Pizza",
+          "price": 14.99
+      }
   },
   {
-    "model": "hiphopapi.item",
-    "id": 3,
-    "name": "Item 3",
-    "price": "30.50"
+      "model": "hiphopapi.item",
+      "pk": 3,
+      "fields": {
+          "name": "BBQ Chicken Pizza",
+          "price": 16.99
+      }
   },
   {
-    "model": "hiphopapi.item",
-    "id": 4,
-    "name": "Item 4",
-    "price": "15.75"
+      "model": "hiphopapi.item",
+      "pk": 4,
+      "fields": {
+          "name": "Buffalo Wings (6 pieces)",
+          "price": 8.99
+      }
   },
   {
-    "model": "hiphopapi.item",
-    "id": 5,
-    "name": "Item 5",
-    "price": "22.00"
+      "model": "hiphopapi.item",
+      "pk": 5,
+      "fields": {
+          "name": "Garlic Parmesan Wings (6 pieces)",
+          "price": 9.99
+      }
   },
   {
-    "model": "hiphopapi.item",
-    "id": 6,
-    "name": "Item 6",
-    "price": "18.50"
+      "model": "hiphopapi.item",
+      "pk": 6,
+      "fields": {
+          "name": "Vegetarian Pizza",
+          "price": 15.99
+      }
   },
   {
-    "model": "hiphopapi.item",
-    "id": 7,
-    "name": "Item 7",
-    "price": "32.25"
+      "model": "hiphopapi.item",
+      "pk": 7,
+      "fields": {
+          "name": "Hawaiian Pizza",
+          "price": 17.99
+      }
+  },
+  {
+      "model": "hiphopapi.item",
+      "pk": 8,
+      "fields": {
+          "name": "Hot BBQ Wings (6 pieces)",
+          "price": 10.99
+      }
+  },
+  {
+      "model": "hiphopapi.item",
+      "pk": 9,
+      "fields": {
+          "name": "Supreme Pizza",
+          "price": 19.99
+      }
+  },
+  {
+      "model": "hiphopapi.item",
+      "pk": 10,
+      "fields": {
+          "name": "Teriyaki Wings (6 pieces)",
+          "price": 11.99
+      }
   }
 ]
+

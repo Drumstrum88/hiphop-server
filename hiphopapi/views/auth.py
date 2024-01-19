@@ -19,7 +19,8 @@ def check_user(request):
         data = {
             'id': user.id,
             'uid': user.uid,
-            'name': user.name
+            'first_name': user.first_name,
+            'last_name': user.last_name
         }
         return Response(data)
     else:
@@ -36,13 +37,15 @@ def register_user(request):
     
     user = User.objects.create(
         uid=request.data['uid'],
-        name=request.data['name']
+        first_name=request.data['first_name'],
+        last_name =request.data['last_name']
     )
     
     data = {
         'id': user.id,
         'uid': user.uid,
-        'name': user.name
+        'first_name': user.first_name,
+        'last_name': user.last_name
     }
     return Response(data)
 

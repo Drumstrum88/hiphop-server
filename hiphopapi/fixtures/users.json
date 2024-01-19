@@ -4,7 +4,8 @@
     "pk": 1,
     "fields": {
       "uid": "user_1",
-      "name": "John Doe"
+      "first_name": "John",
+      "last_name": "Doe"
     }
   },
   {
@@ -12,7 +13,8 @@
     "pk": 2,
     "fields": {
       "uid": "user_2",
-      "name": "Alice Smith"
+      "first_name": "Alice",
+      "last_name": "Smith"
     }
   },
   {
@@ -20,7 +22,8 @@
     "pk": 3,
     "fields": {
       "uid": "user_3",
-      "name": "Bob Johnson"
+      "first_name": "Bob",
+      "last_name": "Johnson"
     }
   },
   {
@@ -28,7 +31,8 @@
     "pk": 4,
     "fields": {
       "uid": "user_4",
-      "name": "Eva Williams"
+      "first_name": "Eva",
+      "last_name": "Williams"
     }
   },
   {
@@ -36,7 +40,8 @@
     "pk": 5,
     "fields": {
       "uid": "user_5",
-      "name": "David Brown"
+      "first_name": "David",
+      "last_name": "Brown"
     }
   }
 ]
