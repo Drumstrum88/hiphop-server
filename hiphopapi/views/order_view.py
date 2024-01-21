@@ -7,30 +7,12 @@ from hiphopapi.models.item import Item
 from hiphopapi.models.order import Order
 from hiphopapi.models.order_type import OrderType
 from hiphopapi.models.orderitem import OrderItem
+from hiphopapi.models.payment_type import PaymentType
 from hiphopapi.models.user import User
 from hiphopapi.views.item_view import ItemSerializer
 from hiphopapi.views.order_items_views import OrderItemSerializer
+from hiphopapi.views.payment_type_views import PaymentTypeSerializer
 
-class OrderSerializer(serializers.ModelSerializer):
-    """JSON serializer for orders"""
-
-    items = OrderItemSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = Order
-        fields = (
-            'id',
-            'name',
-            'user',
-            'status',
-            'customer_phone',
-            'customer_email',
-            'type',
-            'closed',
-            'items',
-            'user',
-        )
-        depth = 1 
     
 class OrderView(ViewSet):
   """Order View"""
@@ -47,16 +29,15 @@ from hiphopapi.views.item_view import ItemSerializer
 from rest_framework.decorators import action
 
 class OrderSerializer(serializers.ModelSerializer):
-    """JSON serializer for orders
-
-    """
-    
     items = OrderItemSerializer(many=True, read_only=True)
-    
+    payment = PaymentTypeSerializer()  
+    date = serializers.DateField(format="%Y-%m-%d")
+
     class Meta:
         model = Order
-        fields = ('id', 'name', 'user', 'status', 'customer_phone', 'customer_email', 'type', 'is_closed', 'items', 'user', 'payment','date','tip','total')
-        depth = 1
+        fields = ('id', 'name', 'user', 'status', 'customer_phone', 'customer_email', 'type', 'is_closed', 'items', 'user', 'payment', 'date', 'tip', 'total')
+        depth = 6
+
     
 class OrderView(ViewSet):
   """Order View"""
@@ -81,14 +62,13 @@ class OrderView(ViewSet):
   def create(self, request):
     """Create an order"""
     
-    user_uid = request.data.get('uid', '')  # Use get method to get the value or an empty string if not present
+    user_uid = request.data.get('uid', '')
     
     try:
         user = User.objects.get(uid=user_uid)
     except User.DoesNotExist:
         return Response({"error": "User does not exist"}, status=status.HTTP_404_NOT_FOUND)
-
-    # Set default status to 'open' if not present in the request data
+   
     order_status = request.data.get("status", "open")
     
     payment = request.data.get("payment")
@@ -114,39 +94,48 @@ class OrderView(ViewSet):
     
     serializer = OrderSerializer(order)
     return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-
-
-  from django.shortcuts import get_object_or_404
-
-  from django.shortcuts import get_object_or_404
+  
 
   def update(self, request, pk):
-        """Update an order"""
-        order = get_object_or_404(Order, pk=pk)
+    try:
+        order = Order.objects.get(pk=pk)
 
-        update_fields = ['name', 'status', 'customer_phone', 'customer_email', 'type', 'closed', 'uid']
+        order.name = request.data.get("name", order.name)
+        order.customer_phone = request.data.get("customer_phone", order.customer_phone)
+        order.customer_email = request.data.get("customer_email", order.customer_email)
 
-        for field in update_fields:
-            if field in request.data:
-                if field == 'uid':
-                    try:
-                        user = User.objects.get(uid=request.data[field])
-                        setattr(order, 'user', user)
-                    except User.DoesNotExist:
-                        return Response({"error": "User does not exist"}, status=status.HTTP_404_NOT_FOUND)
-                elif field == 'type':
-                    try:
-                        order_type = OrderType.objects.get(pk=request.data[field])
-                        setattr(order, 'type', order_type)
-                    except OrderType.DoesNotExist:
-                        return Response({"error": "OrderType does not exist"}, status=status.HTTP_404_NOT_FOUND)
-                else:
-                    setattr(order, field, request.data[field])
+        # Handle the 'type' field separately
+        type_data = request.data.get("type")
+        type_id = type_data.get("id") if type_data else None
+
+        if type_id is not None:
+            order_type = OrderType.objects.get(pk=type_id)
+            order.type = order_type
+
+        order.status = "closed"
+
+        # Simplify payment handling
+        payment_id = request.data.get("payment")
+        order.payment = get_object_or_404(PaymentType, pk=int(payment_id)) if payment_id else None
+
+        order.tip = request.data.get("tip", order.tip)
+        order.total = request.data.get("total", order.total)
 
         order.save()
+
         serializer = OrderSerializer(order)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    except Order.DoesNotExist as ex:
+        return Response({'error': str(ex)}, status=status.HTTP_404_NOT_FOUND)
+    except OrderType.DoesNotExist as ex:
+        return Response({'error': f"Order type with id {type_id} does not exist"}, status=status.HTTP_404_NOT_FOUND)
+    except PaymentType.DoesNotExist as ex:
+        return Response({'error': f"Payment type with id {payment_id} does not exist"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        print(f"Error during update: {str(e)}")
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 
 
   def destroy(self, request, pk):
@@ -165,5 +154,3 @@ class OrderView(ViewSet):
     
     serializer = OrderItemSerializer(orders, many=True)
     return Response(serializer.data)
-
-  

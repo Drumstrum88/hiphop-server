@@ -18,7 +18,6 @@ class OrderItemSerializer(serializers.ModelSerializer):
         read_only_fields = ('order', 'item')
 
     def get_price(self, obj):
-        # Return the associated item's price
         return obj.item.price
     
 class OrderItemView(ViewSet):
@@ -56,8 +55,7 @@ class OrderItemView(ViewSet):
             item=item,
             quantity=request.data['quantity']
         )
-
-        # Update the order's items field
+        
         order.items.add(orderitem)
 
         serializer = OrderItemSerializer(orderitem)
@@ -73,8 +71,7 @@ class OrderItemView(ViewSet):
         orderitem.quantity = request.data['quantity']
 
         orderitem.save()
-
-        # Update the order's items field
+        
         order.items.add(orderitem)
 
         serializer = OrderItemSerializer(orderitem)
